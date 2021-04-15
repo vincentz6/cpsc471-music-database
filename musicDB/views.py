@@ -101,7 +101,7 @@ class PodcastList(APIView):
 class ProducerList(APIView):
     def get(self, request):
         producer1 = Producer.objects.all()
-        serializer = PlaylistSerializer(producer1, many=True)
+        serializer = ProducerSerializer(producer1, many=True)
         return Response(serializer.data)
 
     def post(self):
